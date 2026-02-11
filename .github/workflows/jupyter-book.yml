@@ -1,0 +1,62 @@
+# Jupyter Book (MyST) GitHub Pages Deploy
+# Ensure your GitHub Pages settings for this repository are set to deploy with GitHub Actions.
+# On push to main, syncs myst.yml TOC with notebooks on disk (adds any new lec/lab/hw), then builds and deploys.
+
+name: Jupyter Book (MyST) GitHub Pages Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  BASE_URL: /materials-sp26
+
+permissions:
+  contents: write   # needed to push updated myst.yml when new notebooks are added
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Sync myst.yml TOC with notebooks
+        run: |
+          pip install pyyaml --quiet
+          python3 .github/sync-myst-toc.py
+      - name: Commit and push updated myst.yml
+        run: |
+          if ! git diff --exit-code myst.yml >/dev/null; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add myst.yml
+            git commit -m "chore: sync myst.yml TOC with notebooks"
+            git push
+          fi
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+      - name: Install Jupyter Book (via myst)
+        run: npm install -g jupyter-book
+      - name: Build HTML Assets
+        run: jupyter-book build --html
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './_build/html'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
