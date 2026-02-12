@@ -1,0 +1,71 @@
+version: 1
+project:
+  title: Data 8 Materials (Spring 2026)
+  description: Public materials for Data 8 Foundations of Data Science, UC Berkeley,
+    Spring 2026
+  authors:
+  - name: Data 8 Course Staff
+  github: data-8/materials-sp26
+  license: CC-BY-NC-4.0
+  jupyter:
+    binder:
+      repo: data-8/materials-sp26
+      ref: main
+      url: https://mybinder.org
+    kernelName: python3
+  exclude:
+  - README.md
+  - LICENSE.md
+  toc:
+  - file: intro.md
+  - title: Lectures
+    children:
+    - title: Lecture 01
+      file: lec/lec01/lec01.ipynb
+    - title: Lecture 03
+      file: lec/lec03/lec03.ipynb
+    - title: Lecture 04
+      file: lec/lec04/lec04.ipynb
+    - title: Lecture 05
+      file: lec/lec05/lec05.ipynb
+    - title: Lecture 06
+      file: lec/lec06/lec06.ipynb
+    - title: Lecture 07
+      file: lec/lec07/lec07.ipynb
+    - title: Lecture 08
+      file: lec/lec08/lec08.ipynb
+    - title: Lecture 09
+      file: lec/lec09/lec09.ipynb
+    - title: Lecture 10
+      file: lec/lec10/lec10.ipynb
+  - title: Labs
+    children:
+    - title: Lab 01
+      file: lab/lab01/lab01.ipynb
+    - title: Lab 02
+      file: lab/lab02/lab02.ipynb
+    - title: Lab 03
+      file: lab/lab03/lab03.ipynb
+    - title: Lab 04
+      file: lab/lab04/lab04.ipynb
+  - title: Homework
+    children:
+    - title: Homework 01
+      file: hw/hw01/hw01.ipynb
+    - title: Homework 02
+      file: hw/hw02/hw02.ipynb
+    - title: Homework 03
+      file: hw/hw03/hw03.ipynb
+  - title: Sandbox
+    children:
+    - title: Sandbox
+      file: sandbox/sandbox.ipynb
+site:
+  template: book-theme
+  options:
+    logo: sandbox/data8logo.png
+    favicon: favicon.ico
+    logo_text: Data 8 Materials (Spring 2026)
+    hide_authors: true
+    hide_myst_branding: true
+    hide_outline: false
