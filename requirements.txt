@@ -8,3 +8,4 @@ notebook
 ipywidgets
 plotly
 ipython
+datascience
