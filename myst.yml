@@ -58,6 +58,10 @@ project:
       file: hw/hw03/hw03.ipynb
     - title: Homework 04
       file: hw/hw04/hw04.ipynb
+  - title: Projects
+    children:
+    - title: Project 01
+      file: project/project1.ipynb
   - title: Sandbox
     children:
     - title: Sandbox
