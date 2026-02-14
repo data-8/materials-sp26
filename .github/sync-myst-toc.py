@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Sync myst.yml TOC with notebooks on disk.
-Finds lec/lecNN/, lab/labNN/, hw/hwNN/, project/projectN.ipynb, and sandbox/sandbox.ipynb,
+Finds lec/lecNN/, lab/labNN/, hw/hwNN/, project/projectNN/projectNN.ipynb, and sandbox/sandbox.ipynb,
 builds the table of contents in order, and updates myst.yml.
 Run from repository root. Exits 0 if no change, 2 on error.
 """
@@ -94,8 +94,8 @@ def main() -> int:
     if homework:
         toc.append({"title": "Homework", "children": homework})
 
-    # Projects (flat: project/project1.ipynb, project/project2.ipynb, ...)
-    projects = find_flat_numbered_notebooks("project", "project", "Project {znum}")
+    # Projects (nested: project/project01/project01.ipynb, same as lec/lab/hw)
+    projects = find_numbered_notebooks("project", "project", "Project {znum}")
     if projects:
         toc.append({"title": "Projects", "children": projects})
 
