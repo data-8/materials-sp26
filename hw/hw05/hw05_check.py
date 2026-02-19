@@ -75,8 +75,9 @@ def correctness_check_1_92(simulated_gains_split):
 
 def correctness_check_1_10(histogram_statements):
     try:
-        solution = make_array(1,2,3)
-        return np.all(np.sort(histogram_statements) == solution)
+        return (histogram_statements.item(0) == 1 and
+                histogram_statements.item(1) == 2 and
+                histogram_statements.item(2) == 3)
     except Exception:
         return False
 
@@ -106,18 +107,16 @@ def correctness_check_2_4(lone_winners):
 
 def correctness_check_3_1(movie_frequency_answer):
     try:
-        solution = make_array(1,4,5)
         if len(movie_frequency_answer) != 3:
             return False
-        return np.all(np.sort(movie_frequency_answer) == solution)
+        return sum(movie_frequency_answer == make_array(1,4,5)) == 3
     except Exception:
         return False
 
 def correctness_check_3_2(same_studio_answer):
     try:
-        solution = make_array(1,4)
         if len(same_studio_answer) != 2:
             return False
-        return np.all(np.sort(same_studio_answer) == solution)
+        return sum(same_studio_answer == make_array(1,4)) == 2
     except Exception:
         return False
