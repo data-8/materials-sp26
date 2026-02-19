@@ -62,6 +62,8 @@ project:
       file: hw/hw03/hw03.ipynb
     - title: Homework 04
       file: hw/hw04/hw04.ipynb
+    - title: Homework 05
+      file: hw/hw05/hw05.ipynb
   - title: Projects
     children:
     - title: Project 01
