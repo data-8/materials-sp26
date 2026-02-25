@@ -46,6 +46,8 @@ project:
       file: lec/lec13/lec13.ipynb
     - title: Lecture 14
       file: lec/lec14/lec14.ipynb
+    - title: Lecture 15
+      file: lec/lec15/lec15.ipynb
   - title: Labs
     children:
     - title: Lab 01
