@@ -74,6 +74,8 @@ project:
       file: lab/lab05/lab05.ipynb
     - title: Lab 06
       file: lab/lab06/lab06.ipynb
+    - title: Lab 07
+      file: lab/lab07/lab07.ipynb
   - title: Homework
     children:
     - title: Homework 01
