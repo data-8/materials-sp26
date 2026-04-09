@@ -110,6 +110,8 @@ project:
       file: hw/hw07/hw07.ipynb
     - title: Homework 08
       file: hw/hw08/hw08.ipynb
+    - title: Homework 09
+      file: hw/hw09/hw09.ipynb
   - title: Projects
     children:
     - title: Project 01
