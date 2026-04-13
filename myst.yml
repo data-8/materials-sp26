@@ -96,6 +96,8 @@ project:
       file: lab/lab07/lab07.ipynb
     - title: Lab 08
       file: lab/lab08/lab08.ipynb
+    - title: Lab 09
+      file: lab/lab09/lab09.ipynb
   - title: Homework
     children:
     - title: Homework 01
