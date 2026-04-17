@@ -130,6 +130,8 @@ project:
       file: project/project1/project1.ipynb
     - title: Project 02
       file: project/project2/project2.ipynb
+    - title: Project 03
+      file: project/project3/project3.ipynb
   - title: Sandbox
     children:
     - title: Sandbox
