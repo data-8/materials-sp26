@@ -110,6 +110,8 @@ project:
       file: lab/lab08/lab08.ipynb
     - title: Lab 09
       file: lab/lab09/lab09.ipynb
+    - title: Lab 10
+      file: lab/lab10/lab10.ipynb
   - title: Homework
     children:
     - title: Homework 01
